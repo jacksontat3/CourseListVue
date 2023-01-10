@@ -2,7 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 Vue.use(Router);
 
-// deploy test comment
+// deploy test 3
 export default new Router({
   base: '/courselist',
   mode: "history",
