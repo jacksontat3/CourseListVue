@@ -176,7 +176,7 @@ export default {
         ,level: this.currentCourse.level
         ,hours: this.currentCourse.hours
         ,description: this.currentCourse.description
-        ,createdAt: dateFormat(new Date(), "yyyy-mm-dd HH:MM:ss")
+        ,createdAt: new Date().toLocaleString()
       }
       cds.create(data)
         .then(response => {
@@ -193,7 +193,7 @@ export default {
       if (data.createdAt == null){
         data.createdAt = '2023-01-01 00:00:00'
       }
-      data.updatedAt = dateFormat(new Date(), 'yyyy-mm-dd hh:mm:ss');
+      data.updatedAt = new Date().toLocaleString();
       cds.update(data.id, data)
         .then(response => {
           console.log(response.data);
