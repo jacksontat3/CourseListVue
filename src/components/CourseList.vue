@@ -15,10 +15,10 @@
 
       </div>
     </div>
-    <div class="col-md">
+    <div class="col-md" style="border-radius: 5px; padding: 10px; margin: 10px;">
       <h4> Courses </h4>
       <div class="card">
-        <table class="table" style="border-radius: 5px; padding: 10px; margin: 10px;">
+        <table class="table">
           <thead class="" style="background-color: #f2f3f4;">
             <tr>
               <th scope="col">Course Number</th>
