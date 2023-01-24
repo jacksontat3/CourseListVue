@@ -1,7 +1,8 @@
 <template>
   <div class="list-row">
+    <br>
     <div class="col-md-1"></div>
-    <div class="col-md-8 sticky-top">
+    <div class="col-md-8 sticky-top" style="margin: 10px; padding: 10px;">
       <div class="input-group mb-3">
         <input 
           type="text"
@@ -17,7 +18,7 @@
     <div class="col-md">
       <h4> Courses </h4>
       <div class="card">
-        <table class="table" style="border-radius: 5px;">
+        <table class="table" style="border-radius: 5px; padding: 10px; margin: 10px;">
           <thead class="" style="background-color: #f2f3f4;">
             <tr>
               <th scope="col">Course Number</th>
