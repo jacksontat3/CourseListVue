@@ -6,8 +6,8 @@ import axios from "axios";
 //   headers: { "Content-Type": "application/json" }
 // });
 
-/*** works aws ***/
+/*** works on aws ***/
 export default axios.create({
-  base: process.env.NODE_ENV === 'development' ? "http://localhost:3027/course-jt" : "/course-jt",
+  baseURL: process.env.NODE_ENV === 'development' ? "http://localhost:3027/courses-jt" : "/course-jt",
   headers: { "Content-Type": "application/json" }
 });
