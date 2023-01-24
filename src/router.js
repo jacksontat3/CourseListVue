@@ -3,7 +3,7 @@ import Router from "vue-router";
 Vue.use(Router);
 
 export default new Router({
-  base: process.env.NODE_ENV === 'development' ? "http://localhost/" : "/jacksonfrontend/",
+  base: process.env.NODE_ENV === 'development' ? "http://localhost/course-jt" : "/jacksonfrontend/",
   mode: "history",
   routes: [
     {
