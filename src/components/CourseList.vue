@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="col-md" style="border-radius: 5px; padding: 10px; margin: 10px;">
-      <h4> Courses </h4>
+      <h4 style="text-align: center;"> Courses </h4>
       <div class="card">
         <table class="table">
           <thead class="" style="background-color: #f2f3f4;">
