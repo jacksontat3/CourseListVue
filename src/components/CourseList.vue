@@ -9,9 +9,9 @@
           class="form-control"
           placeholder="search by name or course number"
           v-model="searchVal"
-        />
-        <button @click="searchVal=''" style="margin-right: 10px;">clear search</button>
-        <button @click="showModal(null)" style="margin-left: 10px;">Add Course</button>
+        /> <p></p>
+        <button @click="searchVal=''" style="margin-right: 10px; border-radius: 4px;" class="btn btn-dark">Clear Search</button>
+        <button @click="showModal(null)" style="margin-left: 10px; border-radius: 4px;" class="btn btn-dark">Add Course</button>
 
       </div>
     </div>
