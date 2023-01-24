@@ -1,6 +1,5 @@
 <template>
   <div class="list-row">
-    <h4> Courses view </h4>
     <div class="col-md-1"></div>
     <div class="col-md-8 sticky-top">
       <div class="input-group mb-3">
@@ -41,8 +40,8 @@
               <td>{{ course.level }}</td>
               <td>{{ course.hours }}</td>
               <td class="cell">{{ course.description }}</td>
-              <td><button @click="showModal(course.id)">edit</button></td>
-              <td><button @click="deleteCourse(course.id)">delete</button></td>
+              <td><button class="btn btn-outline-warning" @click="showModal(course.id)">edit</button></td>
+              <td><button class="btn btn-outline-danger" @click="deleteCourse(course.id)">delete</button></td>
             </tr>
           </tbody>
         </table>
