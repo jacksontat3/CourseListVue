@@ -41,8 +41,8 @@
               <td>{{ course.level }}</td>
               <td>{{ course.hours }}</td>
               <td class="cell">{{ course.description }}</td>
-              <td><button @click="showModal(course.id)" class="btn btn-warning">edit</button></td>
-              <td><button @click="deleteCourse(course.id)" class="btn btn-outline-danger">delete</button></td>
+              <td><button @click="showModal(course.id)">edit</button></td>
+              <td><button @click="deleteCourse(course.id)">delete</button></td>
             </tr>
           </tbody>
         </table>
