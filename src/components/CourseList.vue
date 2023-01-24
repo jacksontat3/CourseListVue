@@ -10,8 +10,8 @@
           placeholder="search by name or course number"
           v-model="searchVal"
         /> <p></p>
-        <button @click="searchVal=''" style="margin-right: 10px; radius: " class="btn btn-dark">Clear Search</button>
-        <button @click="showModal(null)" style="margin-left: 10px;" class="btn btn-dark">Add Course</button>
+        <button @click="searchVal=''" style="margin-right: 10px; border-radius: 4px;" class="btn btn-dark">Clear Search</button>
+        <button @click="showModal(null)" style="margin-left: 10px; border-radius: 4px;" class="btn btn-dark">Add Course</button>
 
       </div>
     </div>
