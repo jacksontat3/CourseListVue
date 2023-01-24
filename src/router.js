@@ -2,9 +2,8 @@ import Vue from "vue";
 import Router from "vue-router";
 Vue.use(Router);
 
-// deploy test 3
 export default new Router({
-  base: '/courselist',
+  base: process.env.NODE_ENV === 'development' ? "http://localhost/course-jt" : "/jacksonfrontend/",
   mode: "history",
   routes: [
     {
