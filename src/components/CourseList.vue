@@ -11,7 +11,7 @@
           v-model="searchVal"
         /> <p></p>
         <button @click="searchVal=''" style="margin-right: 10px; border-radius: 4px;" class="btn btn-dark">Clear Search</button>
-        <button @click="showModal(null)" style="margin-left: 10px; border-radius: 4px;" class="btn btn-dark">Add Course</button>
+        <button @click="showModal()" style="margin-left: 10px; border-radius: 4px;" class="btn btn-dark">Add Course</button>
 
       </div>
     </div>
@@ -138,23 +138,26 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+
+import { defineComponent } from 'vue';
+import { Course } from '../types';
 import cds from '../services/CourseDataService';
 import VueModal from '@kouts/vue-modal';
 import '@kouts/vue-modal/dist/vue-modal.css'; 
 
-export default {
+export default defineComponent({
   name: 'course-list'
   ,components: {
     'Modal' : VueModal
   }
-  ,data() {
+  ,data: () => {
     return {
-      courses: []
-      ,searchVal: ''
-      ,currentCourse: {}
-      ,editing: false
-      ,viewModal: false
+      courses: [] as Array<Course>
+      ,searchVal: '' as String
+      ,currentCourse: {} as Course
+      ,editing: false as boolean
+      ,viewModal: false as boolean
     }
   }
   ,methods: {
@@ -177,7 +180,7 @@ export default {
         ,hours: this.currentCourse.hours
         ,description: this.currentCourse.description
         ,createdAt: new Date().toLocaleString()
-      }
+      } as Course;
       cds.create(data)
         .then(response => {
           console.log(response.data);
@@ -189,7 +192,7 @@ export default {
         })
     }
     ,updateCourse() {
-      var data = {...this.currentCourse};
+      var data = {...this.currentCourse} as Course;
       if (data.createdAt == null){
         data.createdAt = '2023-01-01 00:00:00'
       }
@@ -204,7 +207,7 @@ export default {
           console.log(e);
         })
     }
-    ,deleteCourse(id) {
+    ,deleteCourse(id:number) {
       cds.delete(id)
       .then(response => {
           console.log(response.data);
@@ -214,33 +217,32 @@ export default {
           console.log(e);
         })
     }
-    ,showModal(id) {
+    ,showModal(id:number | null = null) {
       console.log(id);
       if(id){
-        this.currentCourse = this.courses.find(c => c.id == id);
+        this.currentCourse = this.courses.find(c => c.id == id) as Course;
         this.editing = true;
         this.viewModal = true;
       } else {
         this.currentCourse = {
           courseNumber: ''
-          ,name: ''
           ,department: ''
           ,description: ''
           ,level: null
           ,hours: null
-        }
+        } as Course;
         this.viewModal = true;
       }
     }
     ,cancelAction() {
-      this.currentCourse = {};
+      this.currentCourse = {} as Course;
       this.editing = false;
       this.viewModal = false;
     }
   }
   ,computed: {
-    coursesFiltered() {
-      if(this.searhVal == ''){
+    coursesFiltered():Array<Course> {
+      if(this.searchVal == ''){
         return this.courses;
       } else {
         return this.courses.filter(c => 
@@ -249,11 +251,11 @@ export default {
       }
     }
   }
-  ,mounted() {
+  ,mounted():void {
     this.fetchAll();
   } 
 
-}
+})
 </script>
 
 <style scoped>
