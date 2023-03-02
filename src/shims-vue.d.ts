@@ -3,6 +3,4 @@ declare module '*.vue' {
   export default Vue
 }
 
-declare module '@kouts/vue-modal' {
-  import VueModal from '@kouts/vue-modal'
-}
+declare module '@kouts/vue-modal';
