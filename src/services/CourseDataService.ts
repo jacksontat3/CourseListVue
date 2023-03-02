@@ -1,22 +1,24 @@
 import http from '../http-common';
+import { Course } from '../types';
+
 class CourseDataService {
   getAll() {
     console.log('getting all');
     return http.get("/courses");
   }
-  get(id) {
+  get(id: number) {
     return http.get(`/courses/${id}`);
   }
-  create(data) {
+  create(data: Course) {
     return http.post("/courses", data);
   }
-  update(id, data) {
+  update(id: number, data: Course) {
     return http.put(`/courses/${id}`, data);
   }
-  delete(id) {
+  delete(id: number) {
     return http.delete(`/courses/${id}`);
   }
-  findByTitle(title) {
+  findByTitle(title: string) {
     return http.get(`/courses?title=${title}`);
   }
 }

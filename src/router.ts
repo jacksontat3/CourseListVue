@@ -1,17 +1,23 @@
+
 import Vue from "vue";
-import Router from "vue-router";
+import type { RouteConfig } from 'vue-router';
+import Router from 'vue-router'
+
 Vue.use(Router);
 
-// deploy test #4
-export default new Router({
-  base: process.env.NODE_ENV === 'development' ? "http://localhost/" : "/jacksonfrontend/",
-  mode: "history",
-  routes: [
+const basicRoutes: Array<RouteConfig> = [
     {
       path: "/"
       ,alias: "/courses"
       ,name: "courses"
-      ,component: () => import("./components/CourseList")
+      ,component: () => import("./components/CourseList.vue")
     }
-  ]
-});
+]
+
+const router = new Router({
+  base: process.env.NODE_ENV === 'development' ? "http://localhost/" : "/jacksonfrontend/",
+  mode: "history",    
+  routes: basicRoutes 
+})
+
+export default router;
