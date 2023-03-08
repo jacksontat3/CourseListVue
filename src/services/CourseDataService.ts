@@ -3,7 +3,6 @@ import { Course } from '../types';
 
 class CourseDataService {
   getAll() {
-    console.log('getting all');
     return http.get("/courses");
   }
   get(id: number) {

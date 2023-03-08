@@ -165,7 +165,6 @@ export default defineComponent({
       cds.getAll()
       .then((res) => {
         this.courses = res.data;
-        console.log(this.courses);
       })
       .catch((e) => {
         console.log(e);
